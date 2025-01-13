@@ -1,0 +1,1129 @@
+{
+    "configuration_variables": {
+        "jpa_used": true, 
+        "jarkata_persistence_api": true,
+        "generate_classes_following_packages": true,
+        "OUT_PUT_DIR": "./generated_classes",
+        "model_classes_package": "com.example.entity",
+        "controller_classes_packages": "com.example.controller",
+        "repository_classes_packages": "com.example.repository",
+        "service_classes_packages": "com.example.service",
+        "entity_suffix": "Entity",
+        "pojo_model_beanified": true,
+        "id_generated_value": "IDENTITY",
+        "add_models_no_and_all_args_constructors": true,
+        "add_model_class_getters_setters": true,
+        "add_model_class_hashcode_equals_tostring_methods": true,
+        "spring_data_used_for_repositories_and_services": true
+    },
+    "entities": [
+        {
+            "entity_name": "SimpleModel",
+            "entity_supplementary_annotations": ["@NoArgsConstructor", "@Getter", "@Setter", "@AllArgsConstructor"],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                }
+            ]
+        },
+        {
+            "entity_name": "Fruits",
+            "entity_supplementary_annotations": ["@NoArgsConstructor", "@Getter", "@Setter", "@AllArgsConstructor"],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": []
+        },
+        {
+            "entity_name": "Pomme",
+            "entity_supplementary_annotations": ["@NoArgsConstructor", "@Getter", "@Setter", "@AllArgsConstructor"],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Integer",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "libelle",
+                    "field_type": "String",
+                    "field_annotations": ["@Column(name = \"nom\", unique = true, nullable = false, length = 100)", "@OrderBy"]
+                }
+            ]
+        },
+        {
+            "entity_name": "Mangue",
+            "entity_supplementary_annotations": ["@NoArgsConstructor", "@Getter", "@Setter", "@AllArgsConstructor"],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Integer",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "nom",
+                    "field_type": "String",
+                    "field_annotations": ["@Column(name=\"nom_scientifique\", nullable=true)"]
+                },
+                {
+                    "field_name": "poids",
+                    "field_type": "Float",
+                    "field_annotations": ["@Column(name=\"masse\", nullable=true)"]
+                }
+            ]
+        },
+        {
+            "entity_name": "Citron",
+            "entity_supplementary_annotations": ["@NoArgsConstructor", "@Getter", "@Setter", "@AllArgsConstructor", "@CertainAnnotation(name=\"nameoftheparam1\", key=\"nameoftheparam2\")"],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "nom",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "poids",
+                    "field_type": "Float",
+                    "field_annotations": []
+                }
+            ]
+        },
+        {
+            "entity_name": "Utilisateur",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": ["Authentifiable", "Exportable", "Empruntable", "Moderable", "Publisable", "Inscriptible", "Planifiable"],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "nom",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "pseudo",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "email",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "photo",
+                    "field_type": "Photo",
+                    "field_annotations": ["@OneToOneJoinColumn"]
+                },
+                {
+                    "field_name": "enligne",
+                    "field_type": "Presence",
+                    "field_annotations": ["@Enumerated(EnumType.STRING)"]
+                },
+                {
+                    "field_name": "validationCompte",
+                    "field_type": "Statut",
+                    "field_annotations": ["@Enumerated(EnumType.STRING)"]
+                }
+            ]
+        },
+        {
+            "entity_name": "Photo",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "url",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "messages",
+                    "field_type": "Set<Message>",
+                    "field_annotations": ["@OneToManyMappedBy"]
+                },
+                {
+                    "field_name": "sujets",
+                    "field_type": "Set<Sujet>",
+                    "field_annotations": ["@OneToManyMappedBy"]
+                }
+            ]
+        },
+        {
+            "entity_name": "Client",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "nom",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "profil",
+                    "field_type": "ProfilClient",
+                    "field_annotations": ["@OneToOneJoinColumn"]
+                },
+                {
+                    "field_name": "adresseDomicile",
+                    "field_type": "AdressePostable",
+                    "field_annotations": ["@Embedded"]
+                },
+                {
+                    "field_name": "contact",
+                    "field_type": "Coordonnees",
+                    "field_annotations": ["@Embedded"]
+                },
+                {
+                    "field_name": "compte",
+                    "field_type": "CompteBancaire",
+                    "field_annotations": ["@OneToOneMappedBy"]
+                }
+            ]
+        },
+        {
+            "entity_name": "ProfilClient",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "login",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "client",
+                    "field_type": "Client",
+                    "field_annotations": ["@OneToOneMappedBy"]
+                }
+            ]
+        },
+        {
+            "entity_name": "Auteur",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "nom",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "adresseDomicile",
+                    "field_type": "AdressePostable",
+                    "field_annotations": ["@Embedded"]
+                },
+                {
+                    "field_name": "adresseBureau",
+                    "field_type": "AdressePostable",
+                    "field_annotations": ["@Embedded"]
+                }
+            ]
+        },
+        {
+            "entity_name": "Oeuvre",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": ["Authentifiable", "Exportable", "Empruntable", "Moderable", "Publisable", "Inscriptible", "Planifiable"],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "titre",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "auteur",
+                    "field_type": "Auteur",
+                    "field_annotations": ["@ManyToOneJoinColumn"]
+                }
+            ]
+        },
+        {
+            "entity_name": "Departement",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "nom",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "employes",
+                    "field_type": "Set<Employe>",
+                    "field_annotations": ["@OneToManyMappedBy"]
+                }
+            ]
+        },
+        {
+            "entity_name": "Employe",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "nom",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "departement",
+                    "field_type": "Departement",
+                    "field_annotations": ["@ManyToOneJoinColumn"]
+                }
+            ]
+        },
+        {
+            "entity_name": "Etudiant",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": ["Authentifiable", "Exportable", "Empruntable", "Moderable", "Publisable", "Inscriptible", "Planifiable"],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "nom",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "coursInscrits",
+                    "field_type": "Set<Cours>",
+                    "field_annotations": ["@ManyToManyJoinTable"]
+                }
+            ]
+        },
+        {
+            "entity_name": "Cours",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": ["Inscriptible"],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "titre",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "etudiantsInscrits",
+                    "field_type": "Set<Etudiant>",
+                    "field_annotations": ["@ManyToManyMappedBy"]
+                }
+            ]
+        },
+        {
+            "entity_name": "Artiste",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "nom",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "oeuvresRealisees",
+                    "field_type": "Set<Oeuvre>",
+                    "field_annotations": ["@ManyToManyJoinTable"]
+                }
+            ]
+        },
+        {
+            "entity_name": "CompteBancaire",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "numero",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "proprietaire",
+                    "field_type": "Client",
+                    "field_annotations": ["@OneToOneJoinColumn"]
+                }
+            ]
+        },
+        {
+            "entity_name": "Categorie",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "nom",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "description",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "sujets",
+                    "field_type": "Set<Sujet>",
+                    "field_annotations": ["@OneToManyMappedBy"]
+                }
+            ]
+        },
+        {
+            "entity_name": "Sujet",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "titre",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "contenu",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "dateCreation",
+                    "field_type": "Date",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "auteur",
+                    "field_type": "Utilisateur",
+                    "field_annotations": ["@ManyToOneJoinColumn"]
+                },
+                {
+                    "field_name": "categorie",
+                    "field_type": "Categorie",
+                    "field_annotations": ["@ManyToOneJoinColumn"]
+                },
+                {
+                    "field_name": "messages",
+                    "field_type": "Set<Message>",
+                    "field_annotations": ["@OneToManyMappedBy"]
+                }
+            ]
+        },
+        {
+            "entity_name": "Message",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "contenu",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "datePublication",
+                    "field_type": "Date",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "auteur",
+                    "field_type": "Utilisateur",
+                    "field_annotations": ["@ManyToOneJoinColumn"]
+                },
+                {
+                    "field_name": "sujet",
+                    "field_type": "Sujet",
+                    "field_annotations": ["@ManyToOneJoinColumn"]
+                },
+                {
+                    "field_name": "commentaires",
+                    "field_type": "Set<Commentaire>",
+                    "field_annotations": ["@OneToManyMappedBy"]
+                }
+            ]
+        },
+        {
+            "entity_name": "Commentaire",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "contenu",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "datePublication",
+                    "field_type": "Date",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "auteur",
+                    "field_type": "Utilisateur",
+                    "field_annotations": ["@ManyToOneJoinColumn"]
+                },
+                {
+                    "field_name": "message",
+                    "field_type": "Message",
+                    "field_annotations": ["@ManyToOneJoinColumn"]
+                }
+            ]
+        },
+        {
+            "entity_name": "Moderateur",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "utilisateur",
+                    "field_type": "Utilisateur",
+                    "field_annotations": ["@OneToOneJoinColumn"]
+                },
+                {
+                    "field_name": "dateNomination",
+                    "field_type": "Date",
+                    "field_annotations": []
+                }
+            ]
+        },
+        {
+            "entity_name": "Personne",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": true,
+            "entity_inheritance_strategy": "SINGLE_TABLE",
+            "entity_parent_name": "",
+            "discriminator_column_name": "type_pers",
+            "discriminator_type": "CHAR",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "nom",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "prenom",
+                    "field_type": "String",
+                    "field_annotations": []
+                }
+            ]
+        },
+        {
+            "entity_name": "Employe",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "Personne",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "E",
+            "fields": [
+                {
+                    "field_name": "salaire",
+                    "field_type": "Double",
+                    "field_annotations": []
+                }
+            ]
+        },
+        {
+            "entity_name": "Client",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "Personne",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "C",
+            "fields": [
+                {
+                    "field_name": "adresse",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "contact",
+                    "field_type": "String",
+                    "field_annotations": []
+                }
+            ]
+        },
+        {
+            "entity_name": "Personne2",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": true,
+            "entity_inheritance_strategy": "JOINED",
+            "entity_parent_name": "",
+            "discriminator_column_name": "type_pers2",
+            "discriminator_type": "STRING",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "nom",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "prenom",
+                    "field_type": "String",
+                    "field_annotations": []
+                }
+            ]
+        },
+        {
+            "entity_name": "Employe2",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "Personne2",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "EMP",
+            "fields": [
+                {
+                    "field_name": "salaire",
+                    "field_type": "Double",
+                    "field_annotations": []
+                }
+            ]
+        },
+        {
+            "entity_name": "Client2",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "Personne2",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "CLI",
+            "fields": [
+                {
+                    "field_name": "adresse",
+                    "field_type": "String",
+                    "field_annotations": []
+                }
+            ]
+        },
+        {
+            "entity_name": "Personne3",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": true,
+            "entity_inheritance_strategy": "TABLE_PER_CLASS",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "nom",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "prenom",
+                    "field_type": "String",
+                    "field_annotations": []
+                }
+            ]
+        },
+        {
+            "entity_name": "Employe3",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "Personne3",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "salaire",
+                    "field_type": "Double",
+                    "field_annotations": []
+                }
+            ]
+        },
+        {
+            "entity_name": "Client3",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "Personne3",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "adresse",
+                    "field_type": "String",
+                    "field_annotations": []
+                }
+            ]
+        },
+        {
+            "entity_name": "Personne4",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": true,
+            "entity_inheritance_strategy": "MAPPED_SUPERCLASS",
+            "entity_parent_name": "",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "id",
+                    "field_type": "Long",
+                    "field_annotations": ["@Id", "@GeneratedValue(strategy = GenerationType.IDENTITY)"]
+                },
+                {
+                    "field_name": "nom",
+                    "field_type": "String",
+                    "field_annotations": []
+                },
+                {
+                    "field_name": "prenom",
+                    "field_type": "String",
+                    "field_annotations": []
+                }
+            ]
+        },
+        {
+            "entity_name": "Employe4",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "Personne4",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "salaire",
+                    "field_type": "Double",
+                    "field_annotations": []
+                }
+            ]
+        },
+        {
+            "entity_name": "Client4",
+            "entity_supplementary_annotations": [],
+            "interfaces_implemented": [],
+            "entity_is_parent": false,
+            "entity_inheritance_strategy": "",
+            "entity_parent_name": "Personne4",
+            "discriminator_column_name": "",
+            "discriminator_type": "",
+            "discriminator_value": "",
+            "fields": [
+                {
+                    "field_name": "adresse",
+                    "field_type": "String",
+                    "field_annotations": []
+                }
+            ]
+        }
+    ],
+    "enum_classes": [
+        {
+            "enum_name": "Presence",
+            "enum_values": ["ABSENT(0)", "PRESENT(1)", "INDISPONIBLE(2)"]
+        },
+        {
+            "enum_name": "Coefficient",
+            "enum_values": ["UN(1)", "DEUX(2)", "TROIS(3)", "QUATRE(4)","valeur"]
+        },
+        {
+            "enum_name": "Statut",
+            "enum_values": ["VALIDE", "INVALIDE", "ANNULE"]
+        }
+    ],
+    "interface_classes": [
+        {
+            "interface_name": "Authentifiable",
+            "methods": [
+                "boolean authentifier(String identifiant, String motDePasse)",
+                "void deconnecter()"
+            ]
+        },
+        {
+            "interface_name": "Exportable",
+            "methods": [
+                "String exporterEnCSV()",
+                "String exporterEnJSON()"
+            ]
+        },
+        {
+            "interface_name": "Empruntable",
+            "methods": [
+                "boolean estDisponible()",
+                "void emprunter(String utilisateur)",
+                "void retourner()"
+            ]
+        },
+        {
+            "interface_name": "Moderable",
+            "methods": [
+                "boolean estApproprié()",
+                "void supprimer()",
+                "void modifier(String nouveauContenu)"
+            ]
+        },
+        {
+            "interface_name": "Publisable",
+            "methods": [
+                "void publier()",
+                "void retirer()",
+                "boolean estPublic()"
+            ]
+        },
+        {
+            "interface_name": "Inscriptible",
+            "methods": [
+                "void sInscrire(Cours cours)",
+                "void seDesinscrire(Cours cours)",
+                "boolean estInscrit(Cours cours)"
+            ]
+        },
+        {
+            "interface_name": "Planifiable",
+            "methods": [
+                "void planifier(Date dateDebut, Date dateFin)",
+                "boolean estPlanifie()",
+                "void annuler()"
+            ]
+        }
+    ],
+    "embeddable_classes": [
+    {
+        "embeddable_name": "AdressePostable",
+        "fields": [
+            {
+                "field_name": "rue",
+                "field_type": "String",
+                "field_annotations": ["@Column(name = \"rue\", nullable = false)"]
+            },
+            {
+                "field_name": "ville",
+                "field_type": "String",
+                "field_annotations": ["@Column(name = \"ville\", nullable = false)"]
+            },
+            {
+                "field_name": "codePostal",
+                "field_type": "String",
+                "field_annotations": ["@Column(name = \"code_postal\", nullable = false)"]
+            },
+            {
+                "field_name": "pays",
+                "field_type": "String",
+                "field_annotations": ["@Column(name = \"pays\", nullable = false)"]
+            }
+        ]
+    },
+    {
+        "embeddable_name": "Coordonnees",
+        "fields": [
+            {
+                "field_name": "telephone",
+                "field_type": "String",
+                "field_annotations": ["@Column(name = \"telephone\", nullable = false)"]
+            },
+            {
+                "field_name": "email",
+                "field_type": "String",
+                "field_annotations": ["@Column(name = \"email\", nullable = false)"]
+            }
+        ]
+    },
+    {
+        "embeddable_name": "Duree",
+        "fields": [
+            {
+                "field_name": "heures",
+                "field_type": "int",
+                "field_annotations": ["@Column(name = \"heures\", nullable = false)"]
+            },
+            {
+                "field_name": "minutes",
+                "field_type": "int",
+                "field_annotations": ["@Column(name = \"minutes\", nullable = false)"]
+            },
+            {
+                "field_name": "secondes",
+                "field_type": "int",
+                "field_annotations": ["@Column(name = \"secondes\", nullable = false)"]
+            }
+        ]
+    },
+    {
+        "embeddable_name": "Prix",
+        "fields": [
+            {
+                "field_name": "montant",
+                "field_type": "double",
+                "field_annotations": ["@Column(name = \"montant\", nullable = false)"]
+            },
+            {
+                "field_name": "devise",
+                "field_type": "String",
+                "field_annotations": ["@Column(name = \"devise\", nullable = false)"]
+            }
+        ]
+    },
+    {
+        "embeddable_name": "Taille",
+        "fields": [
+            {
+                "field_name": "largeur",
+                "field_type": "double",
+                "field_annotations": ["@Column(name = \"largeur\", nullable = false)"]
+            },
+            {
+                "field_name": "hauteur",
+                "field_type": "double",
+                "field_annotations": ["@Column(name = \"hauteur\", nullable = false)"]
+            },
+            {
+                "field_name": "profondeur",
+                "field_type": "double",
+                "field_annotations": ["@Column(name = \"profondeur\", nullable = false)"]
+            }
+        ]
+    }
+    ]
+}
