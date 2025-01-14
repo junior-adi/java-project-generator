@@ -1,10 +1,10 @@
 # DOCUMENTATION
-Author : Junior ADI 
+- **Author** : Junior ADI 
 - **e-mail**: [rootoor.projects@gmail.com](rootoor.projects@gmail.com)
 - **Twitter**: [@caifyoca](https://x.com/caifyoca)
 - **LinkedIn**: [Junior ADI](www.linkedin.com/in/junior-adi-3b3246241)
-Date : January 13th, 2025 - Abidjan, Côte d'Ivoire, West Africa.
-License : GPLv3
+- Date : January 13th, 2025 - Abidjan, Côte d'Ivoire, West Africa.
+- License : GPLv3
 
 # Why Such a Program?
 
