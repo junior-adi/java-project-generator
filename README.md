@@ -12,6 +12,16 @@ When working on Java projects, even with frameworks, we often face the challenge
 
 To alleviate these time-consuming tasks, the **"JavaClassGenerator"** program was created.  
 
+### Program's versions
+
+This program is written in different language for fun and to allow everybody to use its favourite languages he uses usually after JAVA.
+
+- [Java Version](https://github.com/junior-adi/java-project-generator/blob/main/JavaClassGenerator.java)
+- [Python Version](https://github.com/junior-adi/java-project-generator/blob/main/JavaClassGenerator.py)
+- [Bash Version](https://github.com/junior-adi/java-project-generator/blob/main/JavaClassGenerator.bash)
+- [C Version](https://github.com/junior-adi/java-project-generator/blob/main/JavaClassGenerator.c)
+- [C++ Version](https://github.com/junior-adi/java-project-generator/blob/main/JavaClassGenerator.cpp)
+
 ### Benefits of such a program in the short, medium, and long term:  
 
 #### **Short-term benefits:**  
