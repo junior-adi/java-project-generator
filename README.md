@@ -14,7 +14,7 @@ To alleviate these time-consuming tasks, the **"JavaClassGenerator"** program wa
 
 ### Program's versions
 
-This program is written in different language for fun and to allow everybody to use its favourite languages he uses usually after JAVA.
+This program is written in different languages for fun and to allow everybody to use its favourite languages he uses usually after JAVA.
 
 - [Java Version](https://github.com/junior-adi/java-project-generator/blob/main/JavaClassGenerator.java)
 - [Python Version](https://github.com/junior-adi/java-project-generator/blob/main/JavaClassGenerator.py)
